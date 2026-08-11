@@ -2,126 +2,237 @@ HTML
 <!DOCTYPE html>
 <html lang="hu">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GuidMTA</title>
-  <!-- Ikonok betöltése -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-  <style>
-    /* Alapbeállítások */
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
-    html { scroll-behavior: smooth; }
-    body { background-color: #080a0f; color: #ffffff; }
-
-    /* Felső menü */
-    header {
-      display: flex; justify-content: flex-end; align-items: center;
-      padding: 25px 60px; gap: 30px; font-weight: 500;
-      position: absolute; top: 0; right: 0; width: 100%; z-index: 10;
-    }
-    header a { color: #b0b5c0; text-decoration: none; transition: 0.3s; }
-    header a:hover { color: #2ecc71; }
-
-    /* Hero rész (Főoldal) */
-    .hero {
-      height: 100vh; display: flex; flex-direction: column;
-      justify-content: center; align-items: center; text-align: center;
-      background: radial-gradient(circle at center, #10261c 0%, #080a0f 70%);
-      padding: 0 20px;
-    }
-    .logo-container { width: 130px; height: 130px; margin-bottom: 25px; }
-    .logo-container img { width: 100%; height: 100%; object-fit: contain; }
-    .hero h1 { font-size: 3.8rem; font-weight: 800; color: #2ecc71; margin-bottom: 15px; }
-    .hero p { color: #949ba4; max-width: 550px; margin-bottom: 35px; }
-    .btn-join {
-      background-color: #2ecc71; color: #080a0f; padding: 14px 32px;
-      border-radius: 8px; font-weight: 700; text-decoration: none;
-      transition: 0.2s; box-shadow: 0 4px 20px rgba(46, 204, 113, 0.25);
-    }
-    .btn-join:hover { background-color: #27ae60; transform: translateY(-2px); }
-
-    /* Általános szakaszok */
-    .section { padding: 80px 20px; text-align: center; }
-    .title { font-size: 2.5rem; color: #2ecc71; margin-bottom: 50px; }
-    .grid { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; max-width: 1100px; margin: 0 auto; }
-    .card { background: #12151c; border-radius: 12px; padding: 30px; width: 340px; text-align: left; border: 1px solid #1c222e; }
-    .card h3 { color: #fff; margin-bottom: 15px; }
-    .card p { color: #949ba4; font-size: 0.95rem; }
-
-    /* Discord szekció */
-    .discord-box {
-      max-width: 900px; margin: 0 auto; background: #12151c;
-      padding: 50px; border-radius: 16px; border: 1px solid #1c222e;
-      display: flex; justify-content: space-between; align-items: center; gap: 40px; text-align: left;
-    }
-    .discord-text h2 { font-size: 1.8rem; margin-bottom: 20px; }
-    .discord-text ul { list-style: none; margin-top: 20px; }
-    .discord-text li { margin-bottom: 10px; color: #949ba4; }
-    .discord-text li i { color: #2ecc71; margin-right: 10px; }
-    .btn-discord {
-      background: #5865F2; color: #fff; padding: 15px 30px;
-      border-radius: 8px; text-decoration: none; font-weight: 700;
-      display: flex; align-items: center; gap: 10px; transition: 0.2s;
-    }
-    .btn-discord:hover { background: #4752C4; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GuidMTA - Csatlakozz most!</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background-color: #0b0f19;
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        header {
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+            padding: 20px 40px;
+            gap: 30px;
+            font-size: 14px;
+            color: #cccccc;
+        }
+        header span {
+            cursor: pointer;
+        }
+        .hero {
+            text-align: center;
+            padding: 60px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .hero img {
+            width: 120px;
+            height: 120px;
+            object-fit: contain;
+            margin-bottom: 20px;
+        }
+        .hero h1 {
+            font-size: 48px;
+            color: #22c55e;
+            margin-bottom: 15px;
+            font-weight: 800;
+        }
+        .hero p {
+            color: #9ca3af;
+            font-size: 16px;
+            margin-bottom: 30px;
+            max-width: 500px;
+        }
+        .btn-green {
+            background-color: #22c55e;
+            color: #000000;
+            padding: 12px 30px;
+            border-radius: 8px;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 4px 14px rgba(34, 197, 94, 0.4);
+        }
+        .section-title {
+            text-align: center;
+            color: #22c55e;
+            font-size: 32px;
+            margin: 50px 0 30px 0;
+            font-weight: 700;
+        }
+        .cards-container {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+            max-width: 1100px;
+            padding: 0 20px;
+        }
+        .card {
+            background-color: #111827;
+            border: 1px solid #1f2937;
+            border-radius: 12px;
+            padding: 30px;
+            width: 340px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .card h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .card p {
+            color: #9ca3af;
+            font-size: 14px;
+            line-height: 1.5;
+            margin-bottom: 25px;
+        }
+        .card-btn {
+            background-color: #1f2937;
+            color: #ffffff;
+            padding: 10px;
+            border-radius: 6px;
+            text-align: center;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+        }
+        .discord-box {
+            background-color: #111827;
+            border: 1px solid #1f2937;
+            border-radius: 12px;
+            width: 1060px;
+            max-width: 90%;
+            padding: 40px;
+            margin: 50px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .discord-content h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .discord-content p {
+            color: #9ca3af;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        .discord-checks {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            color: #d1d5db;
+            font-size: 14px;
+        }
+        .discord-checks span::before {
+            content: "✓ ";
+            color: #22c55e;
+            font-weight: bold;
+        }
+        .discord-btn {
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+    </style>
 </head>
 <body>
 
-  <!-- Felső navigáció -->
-  <header>
-    <a href="#segitseg">Segítség</a>
-    <a href="#kozoseg">Közösség</a>
-    <a href="#szabalyzat">Szabályzat</a>
-  </header>
+    <header>
+        <span>Segítség</span>
+        <span>Közösség</span>
+        <span>Szabályzat</span>
+    </header>
 
-  <!-- Fő kezdőlap -->
-  <section class="hero">
-    <div class="logo-container">
-      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAEAAQMAAABmvDolAAAABlBMVEUAAAD///+l2Z/dAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAAGXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAACRJREFUeJztwTEBAAAAwqD1T20MH6AAAAAAAAAAAAAAAAAAAHgbDZgAAW9C6oMAAAAASUVORK5CYII=" alt="GuidMTA">
+    <div class="hero">
+        <!-- Itt van pontosan a te logód -->
+        <img src="logo.png.png" alt="GuidMTA Logo">
+        <h1>GuidMTA</h1>
+        <p>Kezd el a saját RP Karaktered a <b>GuidMTA</b> szerverén, és alakítsd úgy a karaktered – ahogyan szeretnéd!</p>
+        <a href="#" class="btn-green">▶ Csatlakozz most</a>
     </div>
-    <h1>GuidMTA</h1>
-    <p>Kezd el a saját RP Karaktered a <b>GuidMTA</b> szerverén, és alakítsd úgy a karaktered – ahogyan szeretnéd!</p>
-    <a href="https://discord.gg/tVzp7sYgv" target="_blank" class="btn-join">Csatlakozz most</a>
-  </section>
 
-  <!-- Segítség szekció (Fejlesztés alatt) -->
-  <section id="segitseg" class="section">
-    <h2 class="title">Szerver Státusz</h2>
-    <div class="grid">
-      <div class="card">
-        <h3><i class="fas fa-code"></i> Fejlesztés alatt</h3>
-        <p>A szerver jelenleg belső fejlesztésen esik át, hogy a lehető legjobb élményt nyújthassuk a nyitáskor.</p>
-      </div>
-      <div class="card">
-        <h3><i class="fas fa-clock"></i> Nyitás dátuma</h3>
-        <p>Hamarosan bejelentjük! Kövesd a Discord közösségünket, hogy ne maradj le az infókról.</p>
-      </div>
-      <div class="card">
-        <h3><i class="fas fa-users"></i> Csapatunk</h3>
-        <p>Jelenleg toborzás zajlik, vagy már a tesztelők dolgoznak a hibák kijavításán.</p>
-      </div>
+    <h2 class="section-title">Hogyan Csatlakozz?</h2>
+    <div class="cards-container">
+        <div class="card">
+            <div>
+                <h3>🎮 1. GTA San Andreas</h3>
+                <p>Szerezd be a GTA San Andreas játékot Steam-en vagy más platformon. Ez az alapvető követelmény az MTA-hoz.</p>
+            </div>
+            <a href="#" class="card-btn">🛒 Vásárlás Steam-en</a>
+        </div>
+        <div class="card">
+            <div>
+                <h3>📥 2. Multi Theft Auto</h3>
+                <p>Töltsd le és telepítsd a legfrissebb MTA:SA klienst a hivatalos weboldalról. Teljesen ingyenes és biztonságos.</p>
+            </div>
+            <a href="#" class="card-btn">⬇ MTA Letöltése</a>
+        </div>
+        <div class="card">
+            <div>
+                <h3>🔌 3. Csatlakozás szerverre</h3>
+                <p>Indítsd el az MTA-t, keresd meg a GuidMTA szervert, és csatlakozz a közösségünkhöz!</p>
+            </div>
+            <a href="#" class="btn-green" style="justify-content: center; width: 100%;">➔ Csatlakozás most</a>
+        </div>
     </div>
-  </section>
 
-  <!-- Közösség / Discord szekció -->
-  <section id="kozoseg" class="section">
-    <h2 class="title">Közösségünk</h2>
+    <h2 class="section-title">Szerver Státusz</h2>
+    <div class="cards-container">
+        <div class="card">
+            <h3>&lt;/&gt; Fejlesztés alatt</h3>
+            <p>A szerver jelenleg belső fejlesztésen esik át, hogy a lehető legjobb élményt nyújthassuk a nyitáskor.</p>
+        </div>
+        <div class="card">
+            <h3>⏰ Nyitás dátuma</h3>
+            <p>Hamarosan bejelentjük! Kövesd a Discord közösségünket, hogy ne maradj le az infókról.</p>
+        </div>
+        <div class="card">
+            <h3>👥 Csapatunk</h3>
+            <p>Jelenleg toborzás zajlik, vagy már a tesztelők dolgoznak a hibák kijavításán.</p>
+        </div>
+    </div>
+
     <div class="discord-box">
-      <div class="discord-text">
-        <h2>Csatlakozz Discord szerverünkhöz</h2>
-        <p>Légy része a legaktívabb MTA közösségnek!</p>
-        <ul>
-          <li><i class="fas fa-check"></i> Beszélgess a vezetőséggel</li>
-          <li><i class="fas fa-check"></i> Események és versenyek</li>
-          <li><i class="fas fa-check"></i> Jelentések és segítség</li>
-        </ul>
-      </div>
-      <a href="https://discord.gg/tVzp7sYgv" target="_blank" class="btn-discord">
-        <i class="fab fa-discord"></i> Csatlakozás
-      </a>
+        <div class="discord-content">
+            <h2>Csatlakozz Discord szerverünkhöz</h2>
+            <p>Légy része a legaktívabb MTA közösségnek!</p>
+            <div class="discord-checks">
+                <span>Beszélgess a vezetőséggel</span>
+                <span>Események és versenyek</span>
+                <span>Jelentések és segítség</span>
+            </div>
+        </div>
+        <a href="#" class="discord-btn">💬 Csatlakozás</a>
     </div>
-  </section>
 
 </body>
 </html>
